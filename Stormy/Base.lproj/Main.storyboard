@@ -124,7 +124,7 @@
         <scene sceneID="tFJ-hN-OyF">
             <objects>
                 <navigationController id="tDW-0q-El2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9rc-yn-7WL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="9rc-yn-7WL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.66666666669999997" green="0.51372549020000002" blue="0.87843137250000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,7 +140,7 @@
         <!--Weekly-->
         <scene sceneID="tlB-09-8Y3">
             <objects>
-                <tableViewController id="kBG-2y-akv" userLabel="Weekly" sceneMemberID="viewController">
+                <tableViewController id="kBG-2y-akv" userLabel="Weekly" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ecQ-vH-BvI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="ojY-5P-8u1" secondAttribute="bottom" constant="8.5" id="2L4-G0-36h"/>
                                 <constraint firstItem="Onu-A0-xUh" firstAttribute="centerX" secondItem="TVl-gW-3Gf" secondAttribute="centerX" id="5Sp-Ch-Srg"/>
@@ -234,6 +234,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weekly" id="R0p-6p-YZe"/>
+                    <connections>
+                        <outlet property="currentPrecipitationLabel" destination="ojY-5P-8u1" id="Tuv-RI-8h2"/>
+                        <outlet property="currentTemperatureLabel" destination="uot-Sg-o1W" id="Z3d-R2-LAD"/>
+                        <outlet property="currentTemperatureRangeLabel" destination="Bll-7C-Vz7" id="skd-aG-yPz"/>
+                        <outlet property="currentWeatherIcon" destination="pMP-39-BPZ" id="Uha-JJ-n6W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9l-ci-DAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

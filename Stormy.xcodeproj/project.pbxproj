@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F18182B1CB6C9DE00D45B06 /* WeeklyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18182A1CB6C9DE00D45B06 /* WeeklyTableViewController.swift */; };
 		1F18182D1CB6CAE800D45B06 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18182C1CB6CAE800D45B06 /* BackgroundView.swift */; };
+		1F18182F1CB6E27600D45B06 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F18182E1CB6E27600D45B06 /* Constant.swift */; };
 		97942D8A1B03AAC2002D007C /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97942D891B03AAC2002D007C /* NetworkOperation.swift */; };
 		97942D8C1B03C611002D007C /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97942D8B1B03C611002D007C /* ForecastService.swift */; };
 		97EBEE4F1B027B820055F957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBEE4E1B027B820055F957 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		1F18182A1CB6C9DE00D45B06 /* WeeklyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewController.swift; sourceTree = "<group>"; };
 		1F18182C1CB6CAE800D45B06 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		1F18182E1CB6E27600D45B06 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		97942D891B03AAC2002D007C /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		97942D8B1B03C611002D007C /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		97EBEE491B027B820055F957 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				97EBEE4E1B027B820055F957 /* AppDelegate.swift */,
 				97EBEE701B027E620055F957 /* CurrentWeather.plist */,
 				97EBEE4D1B027B820055F957 /* Info.plist */,
+				1F18182E1CB6E27600D45B06 /* Constant.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				97942D8A1B03AAC2002D007C /* NetworkOperation.swift in Sources */,
 				97EBEE511B027B820055F957 /* ViewController.swift in Sources */,
 				1F18182B1CB6C9DE00D45B06 /* WeeklyTableViewController.swift in Sources */,
+				1F18182F1CB6E27600D45B06 /* Constant.swift in Sources */,
 				1F18182D1CB6CAE800D45B06 /* BackgroundView.swift in Sources */,
 				97EBEE731B0284500055F957 /* CurrentWeather.swift in Sources */,
 				97942D8C1B03C611002D007C /* ForecastService.swift in Sources */,
