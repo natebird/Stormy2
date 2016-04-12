@@ -42,8 +42,18 @@ class WeeklyTableViewController: UITableViewController {
     // Change the font and size of the nav bar text in code. Skipped because I did it in IB
     //    let navBarAttributesDictionary: [String: AnyObject]? = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     //    navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
+    
+    // Position refresh control above background view
+    refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
+    refreshControl?.tintColor = UIColor.whiteColor()
   }
 
+  @IBAction func refreshWeather() {
+    retrieveWeatherForecast()
+    refreshControl?.endRefreshing()
+  }
+  
+  
   // MARK: - Table view data source
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,6 +78,23 @@ class WeeklyTableViewController: UITableViewController {
     cell.weatherIcon.image = dailyWeather.icon
     cell.dayLabel.text = dailyWeather.day
     return cell
+  }
+
+
+  // MARK: - Table View Delegate Methods
+  override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    view.tintColor = UIColor(red: 170/255.0, green: 131/255.0, blue: 224/255.0, alpha: 1.0)
+    if let header = view as? UITableViewHeaderFooterView {
+      header.textLabel!.textColor = UIColor.whiteColor()
+    }
+  }
+  
+  override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath)
+    cell?.contentView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+    let highlightView = UIView()
+    highlightView.backgroundColor = UIColor(red: 165/255.0, green: 142/255.0, blue: 203/255.0, alpha: 1.0)
+    cell?.selectedBackgroundView = highlightView
   }
 
   
