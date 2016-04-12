@@ -16,8 +16,6 @@ class WeeklyTableViewController: UITableViewController {
   @IBOutlet weak var currentTemperatureRangeLabel: UILabel!
   
   let coordinates: (lat: Double, lon: Double) = (34.227801,-84.5339087)
-  private let forecastAPIKey = Constant.forecastAPIKey
-  
   var weeklyWeather: [DailyWeather] = []
 
   override func viewDidLoad() {
@@ -29,7 +27,6 @@ class WeeklyTableViewController: UITableViewController {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   func configureView() {
@@ -43,7 +40,7 @@ class WeeklyTableViewController: UITableViewController {
     //    let navBarAttributesDictionary: [String: AnyObject]? = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     //    navigationController?.navigationBar.titleTextAttributes = navBarAttributesDictionary
     
-    // Position refresh control above background view
+    // Work around the refresh control being positioned under the background view
     refreshControl?.layer.zPosition = tableView.backgroundView!.layer.zPosition + 1
     refreshControl?.tintColor = UIColor.whiteColor()
   }
@@ -53,15 +50,13 @@ class WeeklyTableViewController: UITableViewController {
     refreshControl?.endRefreshing()
   }
   
-  // MARK: - Segues
+  // MARK: - Navigation
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "DailyScene" {
-      if let indexPath = self.tableView.indexPathForSelectedRow {
+    if segue.identifier == "showDaily" {
+      if let indexPath = tableView.indexPathForSelectedRow {
         let dailyWeather = weeklyWeather[indexPath.row]
-        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DailyWeatherViewController
-        controller.dailyWeather = dailyWeather
-        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-        controller.navigationItem.leftItemsSupplementBackButton = true
+        (segue.destinationViewController as! DailyWeatherViewController).dailyWeather = dailyWeather
       }
     }
   }
@@ -74,7 +69,7 @@ class WeeklyTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Weekly Forecast"
+    return "Forecast"
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,7 +109,7 @@ class WeeklyTableViewController: UITableViewController {
   // MARK: Fetching Weather
   
   func retrieveWeatherForecast() {
-    let forecastService = ForecastService(APIKey: forecastAPIKey)
+    let forecastService = ForecastService(APIKey: Constant.forecastAPIKey)
     forecastService.getForecast(coordinates.lat, lon: coordinates.lon) {
       (let forecast) in
       

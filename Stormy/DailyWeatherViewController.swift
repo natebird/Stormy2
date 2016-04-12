@@ -10,48 +10,51 @@ import UIKit
 
 class DailyWeatherViewController: UIViewController {
 
-  @IBOutlet weak var currentTemperatureLabel: UILabel!
-  @IBOutlet weak var currentHumidityLabel: UILabel!
-  @IBOutlet weak var currentPrecipitationLabel: UILabel!
-  @IBOutlet weak var currentWeatherIcon: UIImageView!
-  @IBOutlet weak var currentWeatherSummary: UILabel!
+  @IBOutlet weak var weatherIcon: UIImageView?
+  @IBOutlet weak var weatherSummary: UILabel?
+  @IBOutlet weak var sunriseTimeLabel: UILabel?
+  @IBOutlet weak var sunsetTimeLabel: UILabel?
+  @IBOutlet weak var lowTemperatureLabel: UILabel?
+  @IBOutlet weak var highTemperatureLabel: UILabel?
+  @IBOutlet weak var precipitationLabel: UILabel?
+  @IBOutlet weak var humidityLabel: UILabel?
   
-  var dailyWeatherViewController: DailyWeatherViewController? = nil
-  var dailyWeather = DailyWeather?()
+  var dailyWeather = DailyWeather?() {
+    didSet {
+      configureView()
+    }
+  }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-  func configureView() {    
-    if let temperature = dailyWeather!.maxTemperature {
-      currentTemperatureLabel?.text = "\(temperature)º"
-    }
-    
-    if let humidity = dailyWeather!.humidity {
-      self.currentHumidityLabel?.text = "\(humidity)%"
-    }
-    
-    if let precipitation = dailyWeather!.precipChance {
-      self.currentPrecipitationLabel?.text = "\(precipitation)%"
-    }
-    
-    if let icon = dailyWeather!.icon {
-      self.currentWeatherIcon?.image = icon
-    }
-    
-    if let summary = dailyWeather!.summary {
-      self.currentWeatherSummary?.text = summary
-    }
-
+    // This needs to be called because when the dailyWeather var 
+    // is set above they are all nil values.
+    configureView()
   }
 
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
 
+  func configureView() {
+    if let weather = dailyWeather {
+      self.title = weather.day
+      weatherIcon?.image = weather.icon
+      weatherSummary?.text = weather.summary
+      sunriseTimeLabel?.text = weather.sunriseTime
+      sunsetTimeLabel?.text = weather.sunsetTime
+      
+      if let lowTemp = weather.minTemperature,
+         let highTemp = weather.maxTemperature,
+         let rain = weather.precipChance,
+         let humidity = weather.humidity {
+            lowTemperatureLabel?.text = "\(lowTemp)º"
+            highTemperatureLabel?.text = "\(highTemp)º"
+            precipitationLabel?.text = "\(rain)%"
+            humidityLabel?.text = "\(humidity)%"
+      }
+    }
+  }
 }
 

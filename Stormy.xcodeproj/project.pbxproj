@@ -14,6 +14,7 @@
 		1F1818331CB6EA8500D45B06 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1818321CB6EA8500D45B06 /* Icon.swift */; };
 		1F1818351CB6EF1900D45B06 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1818341CB6EF1900D45B06 /* Forecast.swift */; };
 		1F9FA8831CBC286200867292 /* DailyWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FA8821CBC286200867292 /* DailyWeatherTableViewCell.swift */; };
+		1F9FA8851CBD54B700867292 /* DetailBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FA8841CBD54B700867292 /* DetailBackgroundView.swift */; };
 		97942D8A1B03AAC2002D007C /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97942D891B03AAC2002D007C /* NetworkOperation.swift */; };
 		97942D8C1B03C611002D007C /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97942D8B1B03C611002D007C /* ForecastService.swift */; };
 		97EBEE4F1B027B820055F957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBEE4E1B027B820055F957 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		1F1818321CB6EA8500D45B06 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		1F1818341CB6EF1900D45B06 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		1F9FA8821CBC286200867292 /* DailyWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		1F9FA8841CBD54B700867292 /* DetailBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBackgroundView.swift; sourceTree = "<group>"; };
 		97942D891B03AAC2002D007C /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		97942D8B1B03C611002D007C /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		97EBEE491B027B820055F957 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				97EBEE521B027B820055F957 /* Main.storyboard */,
 				1F18182C1CB6CAE800D45B06 /* BackgroundView.swift */,
 				1F9FA8821CBC286200867292 /* DailyWeatherTableViewCell.swift */,
+				1F9FA8841CBD54B700867292 /* DetailBackgroundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -139,9 +142,9 @@
 		97EBEE4B1B027B820055F957 /* Stormy */ = {
 			isa = PBXGroup;
 			children = (
-				1F1818291CB6C99200D45B06 /* Controller */,
-				1F1818281CB6C98B00D45B06 /* Views */,
 				1F1818271CB6C98400D45B06 /* Models */,
+				1F1818281CB6C98B00D45B06 /* Views */,
+				1F1818291CB6C99200D45B06 /* Controller */,
 				97EBEE551B027B820055F957 /* Images.xcassets */,
 				97EBEE571B027B820055F957 /* LaunchScreen.xib */,
 				97EBEE4C1B027B820055F957 /* Supporting Files */,
@@ -290,6 +293,7 @@
 				1F9FA8831CBC286200867292 /* DailyWeatherTableViewCell.swift in Sources */,
 				1F1818331CB6EA8500D45B06 /* Icon.swift in Sources */,
 				1F1818351CB6EF1900D45B06 /* Forecast.swift in Sources */,
+				1F9FA8851CBD54B700867292 /* DetailBackgroundView.swift in Sources */,
 				1F1818311CB6E78000D45B06 /* DailyWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
