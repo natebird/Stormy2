@@ -99,7 +99,7 @@ class WeeklyTableViewController: UITableViewController {
           
           if let highTemp = self.weeklyWeather.first?.maxTemperature,
             let lowTemp = self.weeklyWeather.first?.minTemperature {
-              self.currentTemperatureLabel?.text = "↑\(highTemp)º ↓\(lowTemp)º"
+              self.currentTemperatureRangeLabel?.text = "↑\(highTemp)º ↓\(lowTemp)º"
           }
           
           self.tableView.reloadData()
