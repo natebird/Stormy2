@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Daily Weather-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="Daily Weather" customClass="DailyWeatherViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -68,54 +68,38 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reS-9d-dOX">
-                                <rect key="frame" x="279" y="94" width="43" height="43"/>
-                                <state key="normal" image="refresh">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="refreshWeather" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rff-g7-amm"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="s9S-ng-r9b">
-                                <rect key="frame" x="290" y="106" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="reS-9d-dOX" firstAttribute="centerX" secondItem="s9S-ng-r9b" secondAttribute="centerX" constant="0.5" id="8RV-Tl-Lfx"/>
                             <constraint firstItem="9H1-e3-nam" firstAttribute="top" secondItem="xzR-dT-Nz4" secondAttribute="bottom" constant="8" id="9BT-MR-a6V"/>
                             <constraint firstItem="J1b-H7-QxA" firstAttribute="centerX" secondItem="m9g-ez-Pxo" secondAttribute="centerX" id="Csw-dE-HWb"/>
                             <constraint firstAttribute="centerX" secondItem="J1b-H7-QxA" secondAttribute="centerX" constant="-80" id="DNx-Ga-adh"/>
+                            <constraint firstItem="bdM-b5-evJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="106" id="GcC-LK-cqY"/>
                             <constraint firstItem="EpL-QP-Dgh" firstAttribute="top" relation="lessThanOrEqual" secondItem="bdM-b5-evJ" secondAttribute="bottom" constant="55" id="JnU-dA-918"/>
                             <constraint firstAttribute="centerX" secondItem="EpL-QP-Dgh" secondAttribute="centerX" id="Nh4-0N-zOr"/>
                             <constraint firstItem="m9g-ez-Pxo" firstAttribute="top" secondItem="J1b-H7-QxA" secondAttribute="bottom" constant="9" id="Snc-jl-3dB"/>
-                            <constraint firstAttribute="centerX" secondItem="reS-9d-dOX" secondAttribute="centerX" id="TLL-jd-4nP"/>
                             <constraint firstItem="xzR-dT-Nz4" firstAttribute="centerX" secondItem="9H1-e3-nam" secondAttribute="centerX" constant="0.5" id="Xlm-R0-ca6"/>
+                            <constraint firstItem="WcN-Hs-JYo" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="88" id="ZL7-UK-TI2"/>
                             <constraint firstAttribute="centerX" secondItem="flY-bo-ndr" secondAttribute="centerX" id="fa1-Da-ccW"/>
                             <constraint firstAttribute="centerX" secondItem="xzR-dT-Nz4" secondAttribute="centerX" constant="65.5" id="gJ4-xV-hpL"/>
                             <constraint firstItem="xzR-dT-Nz4" firstAttribute="top" secondItem="EpL-QP-Dgh" secondAttribute="bottom" constant="6" id="hsr-fT-Lsf"/>
-                            <constraint firstItem="bdM-b5-evJ" firstAttribute="top" secondItem="reS-9d-dOX" secondAttribute="bottom" constant="33" id="id0-zV-lWc"/>
                             <constraint firstItem="EpL-QP-Dgh" firstAttribute="top" relation="lessThanOrEqual" secondItem="WcN-Hs-JYo" secondAttribute="bottom" constant="37" id="kZr-uc-kR1"/>
-                            <constraint firstItem="reS-9d-dOX" firstAttribute="centerY" secondItem="s9S-ng-r9b" secondAttribute="centerY" constant="-0.5" id="nau-fG-Rd1"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="flY-bo-ndr" secondAttribute="bottom" priority="750" constant="40" id="rXr-DX-aYf"/>
                             <constraint firstAttribute="centerX" secondItem="WcN-Hs-JYo" secondAttribute="centerX" constant="80" id="u30-Wy-paK"/>
                             <constraint firstAttribute="centerY" secondItem="EpL-QP-Dgh" secondAttribute="centerY" id="wQW-mM-ndN"/>
                             <constraint firstItem="J1b-H7-QxA" firstAttribute="top" secondItem="EpL-QP-Dgh" secondAttribute="bottom" constant="6" id="xBA-cw-Z93"/>
-                            <constraint firstItem="reS-9d-dOX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="xdu-h8-iLm"/>
-                            <constraint firstItem="WcN-Hs-JYo" firstAttribute="top" secondItem="reS-9d-dOX" secondAttribute="bottom" constant="15" id="yEL-MG-VOQ"/>
                             <constraint firstItem="bdM-b5-evJ" firstAttribute="leading" secondItem="WcN-Hs-JYo" secondAttribute="trailing" constant="8" id="yRb-IW-HjU"/>
                             <constraint firstItem="flY-bo-ndr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9H1-e3-nam" secondAttribute="bottom" constant="30" id="zk9-dn-cQE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="s9S-ng-r9b" id="SNY-cL-igX"/>
-                        <outlet property="currentHumidityLabel" destination="9H1-e3-nam" id="vVO-2P-6As"/>
-                        <outlet property="currentPrecipitationLabel" destination="m9g-ez-Pxo" id="O3h-6L-19G"/>
-                        <outlet property="currentTemperatureLabel" destination="EpL-QP-Dgh" id="vcv-sI-oRh"/>
-                        <outlet property="currentWeatherIcon" destination="WcN-Hs-JYo" id="cbB-Tn-eEv"/>
-                        <outlet property="currentWeatherSummary" destination="flY-bo-ndr" id="Hc3-oY-wQ9"/>
-                        <outlet property="refreshButton" destination="reS-9d-dOX" id="8Hw-lf-mOG"/>
+                        <outlet property="currentHumidityLabel" destination="9H1-e3-nam" id="7ZD-0d-4hF"/>
+                        <outlet property="currentPrecipitationLabel" destination="m9g-ez-Pxo" id="V1s-4C-xZb"/>
+                        <outlet property="currentTemperatureLabel" destination="EpL-QP-Dgh" id="Yw7-cl-QBV"/>
+                        <outlet property="currentWeatherIcon" destination="WcN-Hs-JYo" id="4s4-Qn-GL0"/>
+                        <outlet property="currentWeatherSummary" destination="flY-bo-ndr" id="b1N-ee-TY6"/>
+                        <outlet property="humidityLabel" destination="xzR-dT-Nz4" id="onA-47-6BP"/>
+                        <outlet property="precipitationLabel" destination="J1b-H7-QxA" id="GKe-we-kM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -139,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="-1245" y="387"/>
         </scene>
-        <!--Weekly-->
+        <!--Weekly Weather-->
         <scene sceneID="tlB-09-8Y3">
             <objects>
-                <tableViewController id="kBG-2y-akv" userLabel="Weekly" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kBG-2y-akv" userLabel="Weekly Weather" customClass="WeeklyTableViewController" customModule="Stormy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ecQ-vH-BvI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +253,7 @@
                                     <outlet property="dayLabel" destination="bZV-tn-G8h" id="evd-7b-1rA"/>
                                     <outlet property="temperatureLabel" destination="aev-Pa-25x" id="AEA-KN-BT8"/>
                                     <outlet property="weatherIcon" destination="2ea-Ue-JND" id="ddc-Pc-DjL"/>
-                                    <segue destination="vXZ-lx-hvc" kind="show" action="showDetailViewController:sender:" id="baQ-01-r2A"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="DailyScene" action="showDetailViewController:sender:" id="baQ-01-r2A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -279,6 +263,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weekly" id="R0p-6p-YZe"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="XU9-XS-e0l">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshWeather" destination="kBG-2y-akv" eventType="valueChanged" id="5Hd-LF-frB"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="currentPrecipitationLabel" destination="ojY-5P-8u1" id="Tuv-RI-8h2"/>
                         <outlet property="currentTemperatureLabel" destination="uot-Sg-o1W" id="Z3d-R2-LAD"/>
@@ -294,7 +284,6 @@
     <resources>
         <image name="clear-day" width="58" height="60"/>
         <image name="default" width="28" height="28"/>
-        <image name="refresh" width="43" height="43"/>
         <image name="temperatureIconBG" width="42" height="43"/>
     </resources>
 </document>
