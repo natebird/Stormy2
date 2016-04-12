@@ -51,7 +51,7 @@ class WeeklyTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Forecast"
+    return "Weekly Forecast"
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
