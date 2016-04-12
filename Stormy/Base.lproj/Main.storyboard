@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -216,14 +218,57 @@
                             </variation>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="TQY-x4-YV1" userLabel="DayCell">
-                                <rect key="frame" x="0.0" y="242" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyWeatherCell" rowHeight="64" id="TQY-x4-YV1" userLabel="DailyWeatherCell" customClass="DailyWeatherTableViewCell" customModule="Stormy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="242" width="600" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TQY-x4-YV1" id="7vN-ne-ldi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temperatureIconBG" translatesAutoresizingMaskIntoConstraints="NO" id="UVW-Nn-Vhc">
+                                            <rect key="frame" x="191" y="11" width="42" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="UVW-Nn-Vhc" secondAttribute="height" multiplier="20:21" id="BXI-jj-W1o"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aev-Pa-25x">
+                                            <rect key="frame" x="199" y="26" width="27" height="14.5"/>
+                                            <string key="text">100º
+</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-Ue-JND">
+                                            <rect key="frame" x="258" y="12" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="2ea-Ue-JND" secondAttribute="height" multiplier="1:1" id="uLq-9S-mu5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZV-tn-G8h">
+                                            <rect key="frame" x="321" y="21" width="94" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bZV-tn-G8h" firstAttribute="leading" secondItem="2ea-Ue-JND" secondAttribute="trailing" constant="23" id="6Hp-dU-VLM"/>
+                                        <constraint firstItem="UVW-Nn-Vhc" firstAttribute="top" secondItem="7vN-ne-ldi" secondAttribute="topMargin" constant="3" id="8gn-jq-obx"/>
+                                        <constraint firstItem="aev-Pa-25x" firstAttribute="centerY" secondItem="UVW-Nn-Vhc" secondAttribute="centerY" id="GQU-wV-yhE"/>
+                                        <constraint firstItem="bZV-tn-G8h" firstAttribute="centerY" secondItem="7vN-ne-ldi" secondAttribute="centerY" id="Haz-Rd-4hv"/>
+                                        <constraint firstItem="aev-Pa-25x" firstAttribute="centerX" secondItem="UVW-Nn-Vhc" secondAttribute="centerX" id="Lj3-eH-XRD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2ea-Ue-JND" secondAttribute="bottom" constant="3.5" id="O98-MO-hNM"/>
+                                        <constraint firstItem="UVW-Nn-Vhc" firstAttribute="centerX" secondItem="7vN-ne-ldi" secondAttribute="centerX" constant="-88" id="hKd-gw-Upa"/>
+                                        <constraint firstItem="2ea-Ue-JND" firstAttribute="top" secondItem="7vN-ne-ldi" secondAttribute="topMargin" constant="4" id="hzY-Tg-Xom"/>
+                                        <constraint firstItem="2ea-Ue-JND" firstAttribute="centerX" secondItem="7vN-ne-ldi" secondAttribute="centerX" constant="-22" id="vG1-Vk-KBd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="dayLabel" destination="bZV-tn-G8h" id="evd-7b-1rA"/>
+                                    <outlet property="temperatureLabel" destination="aev-Pa-25x" id="AEA-KN-BT8"/>
+                                    <outlet property="weatherIcon" destination="2ea-Ue-JND" id="ddc-Pc-DjL"/>
                                     <segue destination="vXZ-lx-hvc" kind="show" action="showDetailViewController:sender:" id="baQ-01-r2A"/>
                                 </connections>
                             </tableViewCell>
@@ -250,5 +295,6 @@
         <image name="clear-day" width="58" height="60"/>
         <image name="default" width="28" height="28"/>
         <image name="refresh" width="43" height="43"/>
+        <image name="temperatureIconBG" width="42" height="43"/>
     </resources>
 </document>

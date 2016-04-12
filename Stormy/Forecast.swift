@@ -14,7 +14,7 @@ struct Forecast {
   
   init(weatherDictionary: [String: AnyObject]?) {
     if let currentWeatherDictionary = weatherDictionary?["currently"] as? [String: AnyObject] {
-      CurrentWeather(weatherDictionary: currentWeatherDictionary)
+      currentWeather = CurrentWeather(weatherDictionary: currentWeatherDictionary)
     }
     if let weeklyWeatherArray = weatherDictionary?["daily"]?["data"] as? [[String: AnyObject]] {
       for dailyWeather in weeklyWeatherArray {
